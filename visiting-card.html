@@ -5,9 +5,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Akra Consultants - Connect With Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FFF;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo-section {
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            position: relative;
+            top: 18px;
+            left: -5px;
+            font-size: 50px;
+        }
+
+        .header h1 {  
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .content {
+            padding: 40px 25px;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #333;
+            margin-bottom: 35px;
+            font-size: 15px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .intro-text span {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .options-grid {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .option-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            gap: 12px;
+        }
+
+        .option-btn i {
+            font-size: 20px;
+        }
+
+        .option-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .phone-btn {
+            border: 2px solid #5568d3;
+            color: #5568d3; 
+        }
+
+        .phone-btn:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+        }
+
+        .linkedin-btn {
+            border: 2px solid #5568d3;
+            color: #5568d3;
+        }
+
+        .linkedin-btn:hover {
+            background: linear-gradient(135deg, #005fa3 0%, #00356f 100%);
+        }
+
+        .website-btn {
+            border: 2px solid #5568d3;
+            color: #5568d3;
+        }
+
+        .website-btn:hover {
+            background: linear-gradient(135deg, #ff5252 0%, #e83e4e 100%);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #1ba952 100%);
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #20c75a 0%, #168a47 100%);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+            margin: 25px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 15px;
+                max-width: 100%;
+            }
+
+            .header {
+                padding: 35px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 13px;
+            }
+
+            .logo-icon {
+                font-size: 45px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .intro-text {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .option-btn {
+                padding: 16px;
+                font-size: 15px;
+                gap: 10px;
+            }
+
+            .option-btn i {
+                font-size: 18px;
+            }
+        }
+
+        /* Tablet responsiveness */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                max-width: 450px;
+            }
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            animation: toastIn 0.3s ease-out forwards, toastOut 0.3s ease-out 2.7s forwards;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        @keyframes toastIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes toastOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-icon"> 
+                    <img width="120" height="auto" src="https://static.tildacdn.one/tild3531-3636-4133-b766-646636616239/Group_11.png" alt="akra logo" />
+                </div>
+                <h1>Akra Consultants</h1>
+                <p>Connect With Us</p>
+            </div>
+        </div>
+        
+        <div class="content">
+
+            <div class="options-grid">
+                <!-- Phone Option -->
+                <a href="tel:+919884707312" class="option-btn phone-btn" onclick="showToast('Calling...')">
+                    <i class="fas fa-phone"></i>
+                    <span>Call Us</span>
+                </a>
+
+                <!-- LinkedIn Option -->
+                <a href="https://www.linkedin.com/company/akraconsultants/posts/?feedView=all" target="_blank" class="option-btn linkedin-btn" onclick="showToast('Opening LinkedIn...')">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+
+                <!-- Website Option -->
+                <a href="https://www.akraconsultants.com/" target="_blank" class="option-btn website-btn" onclick="showToast('Opening Website...')">
+                    <i class="fas fa-globe"></i>
+                    <span>Visit Website</span>
+                </a>
+
+                <!-- WhatsApp Option -->
+                <a href="https://wa.me/919884707312?text=Hello%20Akra%20Consultants" target="_blank" class="option-btn whatsapp-btn" onclick="showToast('Opening WhatsApp...')">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+
+            <div class="divider"></div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Akra Consultants. All rights reserved.</p>
+            <p style="margin-top: 8px; opacity: 0.8;">Your trusted business solution partner</p>
+        </div>
+    </div>
+
+    <script>
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Prevent multiple clicks
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                this.style.pointerEvents = 'none';
+                setTimeout(() => {
+                    this.style.pointerEvents = 'auto';
+                }, 500);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.querySelector('.container').style.animation = 'slideIn 0.6s ease-out';
+        });
+    </script>
 </body>
 </html>
